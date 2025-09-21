@@ -17,16 +17,16 @@ resource "mongodbatlas_database_user" "db-user" {
 }
 
 # Create a Database User 2
-resource "mongodbatlas_database_user" "db-user-2" {
-  username = "user-2"
-  password = random_password.db-user-password.result
-  project_id = mongodbatlas_project.atlas-project.id
-  auth_database_name = "admin"
-  roles {
-    role_name     = "readWrite"
-    database_name = "${var.atlas_project_name}-u2-db"
-  }
-}
+# resource "mongodbatlas_database_user" "db-user-2" {
+#   username = "user-2"
+#   password = random_password.db-user-password.result
+#   project_id = mongodbatlas_project.atlas-project.id
+#   auth_database_name = "admin"
+#   roles {
+#     role_name     = "readWrite"
+#     database_name = "${var.atlas_project_name}-u2-db"
+#   }
+# }
 
 # Create a Database Password
 resource "random_password" "db-user-password" {
